@@ -1,10 +1,10 @@
-Karma Breakdown by Subreddits
+Reddit Karma Breakdown
 ===========
 
 Usage:  
 1. Install PRAW https://praw.readthedocs.org/  
-2. Run 'python redditkarma.py'
+2. Run 'python getkarma.py'
 
 Sample output for /u/PresidentObama:  
-r/politics: 2799  
-r/IAmA: 14753
+r/IAmA: 14753  
+r/politics: 2799
