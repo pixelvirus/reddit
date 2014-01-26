@@ -2,8 +2,8 @@ Reddit Karma Breakdown
 ===========
 
 Usage:  
-1. Install [PRAW](https://praw.readthedocs.org/ "PRAW")  
-2. Run 'python getkarma.py'
+>Install [PRAW](https://praw.readthedocs.org/ "PRAW")  
+>Run 'python getkarma.py'
 
 *Sample output:*  
 
