@@ -8,8 +8,8 @@ reddit = praw.Reddit("Subreddit Monitor by github.com/pixelvirus/")
 
 # login - add to praw.ini for autologin
 username = raw_input("Username? ")
-password = getpass.getpass("\nPassword? ")
-print "\nLogging in...\n"
+password = getpass.getpass("Password? ")
+print "\nLogging in..."
 reddit.login(username, password)
 
 # obtain subreddit
@@ -22,6 +22,10 @@ wordlist = re.sub("[^\w]", " ",  keywords).split()
 
 # obtain number of posts to monitor
 number = raw_input("\nHow many top posts to monitor? ")
+
+# obtain message receiver
+receiver = raw_input("\nWhich user should receive the notifications? ")
+redittor = reddit.get_redditor(receiver)
 
 print "\nThe bot is now monitoring r/{name}\n".format(name=sr)
 
@@ -40,7 +44,7 @@ while True:
         # send a message if found and not already sent
         if submission.id not in completed and found:
             msg = "Post matching keyword(s) found: {link}".format(link=submission.short_link)
-            reddit.user.send_message('pixelvirus', msg)
-            print "\nPost matching keyword(s) found. Message sent to {name}\n".format(name=username)
+            redittor.send_message('pixelvirus', msg)
+            print "Post matching keyword(s) found. Message sent to {name}".format(name=receiver)
             completed.append(submission.id)
     time.sleep(1800)
