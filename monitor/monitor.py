@@ -1,15 +1,16 @@
 import praw
+import getpass
 import re
 import time
 
 # access Reddit with user_agent
 reddit = praw.Reddit("Subreddit Monitor by github.com/pixelvirus/")
 
-# login
-#username = raw_input("Username? ")
-#password = raw_input("\nPassword? ")
-#print "\nLogging in...\n"
-reddit.login()#(username, password)
+# login - add to praw.ini for autologin
+username = raw_input("Username? ")
+password = getpass.getpass("\nPassword? ")
+print "\nLogging in...\n"
+reddit.login(username, password)
 
 # obtain subreddit
 sr = raw_input("\nWhich subreddit to monitor? ")
