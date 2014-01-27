@@ -1,10 +1,15 @@
-Reddit Karma Breakdown
-===========
+Karma Breakdown Script
+======================
+Calculates any user's link karma and sorts them by subreddits and in order.
 
+
+---
 Usage:  
 >Install [PRAW](https://praw.readthedocs.org/ "PRAW")  
->Run 'python getkarma.py'
+>Run the python script
 
+
+---
 *Sample output:*  
 
 	Welcome!
