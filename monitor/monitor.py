@@ -16,12 +16,9 @@ reddit.login(username, password)
 sr = raw_input("\nWhich subreddit to monitor? ")
 
 # obtain keywords
-keywords = raw_input("\nKeywords to look for? (separate with comma) ")
+keywords = raw_input("\nKeyword(s) to look for? (separate with comma) ")
 # slice string into a list of words
 wordlist = re.sub("[^\w]", " ",  keywords).split()
-
-# obtain number of posts to monitor
-number = raw_input("\nHow many top posts to monitor? ")
 
 # obtain message receiver
 receiver = raw_input("\nWhich user should receive the notifications? ")
@@ -34,14 +31,11 @@ completed = []
 
 while True:
     subreddit = reddit.get_subreddit(sr)
-    for submission in subreddit.get_hot(limit=number):
-        # returns submission text
+    for submission in subreddit.get_hot(limit=25):
         text = submission.selftext.lower()
-        # returns submission title
-        title = submission.selftext.lower()
-        # look for keyword in text and title
-        found = any(string in text or title for string in wordlist)
-        # send a message if found and not already sent
+        # look for keyword in top 25 posts
+        found = any(string in text for string in wordlist)
+        # send a message if found is true and not already sent
         if submission.id not in completed and found:
             msg = "Post matching keyword(s) found: {link}".format(link=submission.short_link)
             redittor.send_message('pixelvirus', msg)
