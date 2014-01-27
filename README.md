@@ -5,5 +5,10 @@ Reddit Bots and Scripts
 
 Using [PRAW](https://praw.readthedocs.org/ "PRAW") (Python Reddit API Wrapper)
 
-	1. Karma Breakdown - calculates any user's link karma and sorts them by subreddits and in order.
-	2. Submission Monitor - looks for specified keyword(s) in a subreddit and sends messages to someone's inbox.
+------
+>**Karma Breakdown** - calculate any user's link karma and sort them in order by subreddits.
+
+>**Submission Monitor** - look for specified keyword(s) in a subreddit and send notification to inbox.
+
+
+------
