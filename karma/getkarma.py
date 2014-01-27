@@ -3,14 +3,14 @@ import praw
 # access Reddit with user_agent
 reddit = praw.Reddit("Karma Breadown by github.com/pixelvirus/")
 # obtain username
-user_name = raw_input("\nWelcome!\n\nWhat is your reddit username? ")
+user_name = raw_input("\nWelcome!\n\nWhat is the reddit username? ")
 
 # return a Redditor instance
 redditor = reddit.get_redditor(user_name)
 # obtain sorting preference
 order = raw_input("\nSort in (d)escending or (a)scending order? ")
 
-print "\nGetting your karma breakdown...this might take a few seconds\n"
+print "\nGetting karma breakdown...this might take a few seconds\n"
 # return a list of Submission contents
 content = redditor.get_submitted(limit=None)
 

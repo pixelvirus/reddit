@@ -1,6 +1,6 @@
 Submission Monitor Bot
 ======================
-Looks for specified keyword(s) in a subreddit and sends messages to someone's inbox.
+Looks for specified keyword(s) in a subreddit's hot posts' title and text and notifies someone through inbox.
 
 
 ---
